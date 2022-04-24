@@ -1,6 +1,6 @@
 describe('Spiando una API', () => {
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('http://localhost:3000')
     });
 
     it('Add new todo by UI', function(){
