@@ -1,6 +1,6 @@
 describe('Spiando una API', () => {
     beforeEach(() => {
-        cy.visit(Cypress.config().baseUrl_test,{failOnStatusCode: false})
+        cy.visit(Cypress.config().baseUrl_test)
     });
 
     it('Add new todo by UI', function(){
