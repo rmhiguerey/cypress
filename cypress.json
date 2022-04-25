@@ -1,7 +1,7 @@
 {
     "viewportWidth": 600,
     "viewportHeight": 800,
-    "baseUrl_test": "http://localhost:3000",
+    "baseUrl_test": "http://localhost:3000/todos",
     "defaultCommandTimeout": 4000
   }
   
