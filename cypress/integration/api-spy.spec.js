@@ -1,6 +1,6 @@
 describe('Spiando una API', () => {
     beforeEach(() => {
-        cy.visit(Cypress.config().baseUrl_test)
+        cy.visit(Cypress.config().baseUrl_test, { headers: { "Accept-Encoding": "gzip, deflate" } })
     });
 
     it('Add new todo by UI', function(){
