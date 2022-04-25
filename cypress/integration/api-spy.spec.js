@@ -1,26 +1,38 @@
-describe('Spiando una API', () => {
-    beforeEach(() => {
-        cy.visit(Cypress.config().baseUrl_test)
-    });
+const todoObject = {completed: false, id: '3', title: 'NewTodoFromPost'}
+const patchObject = {completed: true, id: '3', title: 'NewTodoFromPost'}
 
-    it('Add new todo by UI', function(){
-        cy.intercept('POST', '/todos').as('newTodo')
-
-        cy.get('input#add-todo').type('new-todo{enter}')
-
-        cy.wait('@newTodo').its('response.statusCode').should('eq', 201)
-
-        cy.get('@newTodo').should(request => {
-            cy.log(request)
-            expect(request.response.body.title).to.eql('new-todo')
-
-            const newTodoID = request.response.body.id
-
-            cy.wrap(newTodoID).as('newTodoID')
+describe('CY REQUEST DEMO', () => {
+    it('POST Example', () => {
+        cy
+        .request('POST', '/todos', todoObject)
+        .should(response => {
+            expect(response.status).to.equal(201)
+            expect(response.body['completed']).to.equal(false)
+            expect(response.body).to.contains(todoObject)
         })
     })
-
-    after(function(){
-        cy.request('DELETE', `/todos/${this.newTodoID}`)
+    it('PATCH Example', () => {
+        cy
+        .request('PATCH', '/todos/3', patchObject)
+        .should(response => {
+            expect(response.status).to.equal(200)
+            expect(response.body['completed']).to.equal(true)
+            expect(response.body).to.contains(patchObject)
+        })
     })
-});
+    it('DELETE Example', () => {
+        cy
+        .request('DELETE', '/todos/3')
+        .should(response => {
+            expect(response.status).to.equal(200)
+        })
+    })
+    it('GET Example', () => {
+        cy
+        .request('GET', '/todos/')
+        .should(response => {
+            expect(response.status).to.equal(200)
+        }).its('body')
+        .should('have.length', 2)
+    })
+})
