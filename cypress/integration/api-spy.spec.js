@@ -3,7 +3,6 @@ const patchObject = {completed: true, id: '3', title: 'NewTodoFromPost'}
 
 describe('CY REQUEST DEMO', () => {
     it('POST Example', () => {
-        cy.visit("https://www.google.com/")
         cy
         .request('POST', '/todos', todoObject)
         .should(response => {
