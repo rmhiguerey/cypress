@@ -12,6 +12,7 @@
     "cypress": "^9.5.4",
     "json-server": "0.15.1",
     "sendmail": "^1.6.1",
-    "reinstall-node-modules": "^2.0.0"
+    "reinstall-node-modules": "^2.0.0",
+    "netlify-plugin-cypress": "2.0.0"
   }
 }
