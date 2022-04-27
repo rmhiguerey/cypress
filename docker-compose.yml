@@ -8,5 +8,4 @@ services:
       - "4001:4001"
     env_file:
       - .env
-
-    entrypoint: npm run cypress-e2e --port 4001
+    entrypoint: npx cypress run 
