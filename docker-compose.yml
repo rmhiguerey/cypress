@@ -1,0 +1,9 @@
+services:
+
+  cypress:
+      image: my-image:v2
+      volumes:
+        - ./cypress:/cypress
+        - ./cypress.json:/cypress.json
+
+      entrypoint: cypress-e2e --project .
