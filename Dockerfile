@@ -8,7 +8,7 @@ COPY ./cypress.json .
 COPY ./package.json .
 COPY ./cypress ./cypress
 RUN npm install
-ENTRYPOINT ["npx","cypress","run"]
+ENTRYPOINT ["npx","cypress", "run"]
 # para pasar parametros como --spec, --env
 CMD [""]
 

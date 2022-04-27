@@ -1,9 +1,12 @@
 services:
-
   cypress:
-      image: my-image:v2
-      volumes:
-        - ./cypress:/cypress
-        - ./cypress.json:/cypress.json
+    image: my-image:v2
+    volumes:
+      - ./cypress:/cypress
+      - ./cypress.json:/cypress.json
+    ports:
+      - "4001:4001"
+    env_file:
+      - .env
 
-      entrypoint: cypress-e2e --project .
+    entrypoint: cypress-e2e --project .
