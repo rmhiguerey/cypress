@@ -8,4 +8,4 @@ services:
       - "4001:4001"
     env_file:
       - .env
-    entrypoint: npx cypress run 
+    entrypoint: npx cypress run --port "4001" --browser chrome
