@@ -9,4 +9,4 @@ services:
     env_file:
       - .env
 
-    entrypoint: cypress-e2e --project .
+    entrypoint: npm run cypress-e2e --port 4001
