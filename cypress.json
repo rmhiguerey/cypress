@@ -2,7 +2,7 @@
     "viewportWidth": 600,
     "viewportHeight": 800,
     "requestTimeout": 20000,
-    "baseUrl_test": "http://localhost:3000",
+    "baseUrl_test": "http://20.232.162.178:3000",
     "defaultCommandTimeout": 4000,
     "chromeWebSecurity": false
   }
