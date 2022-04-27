@@ -5,7 +5,7 @@ services:
       - ./cypress:/cypress
       - ./cypress.json:/cypress.json
     ports:
-      - "4001:4001/udp"
+      - "4001:4001"
     env_file:
       - .env
     entrypoint: npx cypress run --port "4001" --browser chrome
